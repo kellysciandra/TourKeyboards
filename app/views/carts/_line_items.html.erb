@@ -1,0 +1,7 @@
+<tr>
+  <th scope="col"><%= link_to line_item.keyboard.artist.name, artist_path(line_item.keyboard.artist) %></th>
+  <th scope="col"><%= link_to line_item.keyboard.title, keyboard_path(line_item.keyboard) %></th>
+  <th scope="col">$<%= line_item.keyboard.price %></th>
+  <th scope="col"><%= line_item.quantity %></th>
+  <th scope="col"><%= link_to "Edit", edit_line_item_path(line_item), class: 'btn btn-outline-secondary' %></th>
+</tr>

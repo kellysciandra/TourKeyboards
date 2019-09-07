@@ -1,0 +1,45 @@
+<div class="container">
+  <%= form_for keyboard do |f| %>
+    <% if @keyboard.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>The form contains <%= pluralize(@keyboard.errors.count, "error") %>:</h4>
+
+      <ul>
+      <% @keyboard.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+  <div class="form-group">
+    <%= f.label :make, "Make" %>
+    <%= f.text_field :make %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Artist (select existing or create new)" %>
+    <%= f.collection_select :artist_id, Artist.all, :id, :name, {include_blank: true}  %><br>
+    <%= f.fields_for :artist, keyboard.build_artist do |artist_fields| %>
+      <%= artist_fields.label :name, "New Artist Name" %>
+      <%= artist_fields.text_field :name %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price, "Price" %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :inventory, "Inventory" %>
+    <%= f.text_field :inventory %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :for_sale, "For Sale" %>
+    <%= f.check_box :for_sale %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

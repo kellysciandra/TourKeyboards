@@ -1,0 +1,5 @@
+<% content_for :table_content do %>
+    <%= render partial: 'keyboard', locals: {keyboard: @keyboard} %>
+<% end %>
+
+<%= render 'layouts/table' %>

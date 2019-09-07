@@ -1,0 +1,5 @@
+<% content_for :table_content do %>
+    <%= render :partial => "keyboards/keyboard", :collection => @artist.keyboards %>
+<% end %>
+
+<%= render 'layouts/table' %>

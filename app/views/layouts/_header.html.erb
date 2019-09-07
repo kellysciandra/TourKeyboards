@@ -1,0 +1,28 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+
+     <nav>
+        <ul class="nav navbar-nav navbar-left">
+          <li id="logo"><%= link_to "Tour Keyboards", store_path %></li>
+          <li><%= link_to "Store Home", store_path %></li>
+
+          <% if user_signed_in? %>
+            <li><%= link_to "My Keyboards", my_keyboards_path %></li>
+            <li><%= link_to 'Add New Keyboard', add_new_keyboard %></li>
+            <% if current_cart.persisted? %>
+              <li><%= link_to "Cart", cart_path(current_cart) %></li>
+            <% end %>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+          <% end %>
+        </ul>
+        <% if user_signed_in? %>
+          <p id="user-email">Signed in as <%= current_user.email %></p>
+        <% end %>
+    </nav>
+  </div>
+</header>
