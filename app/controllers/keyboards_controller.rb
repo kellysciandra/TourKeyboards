@@ -41,7 +41,7 @@ class KeyboardsController < ApplicationController
     def update
       @keyboard = current_user.keyboards.find(params[:id])
   
-      @vinyl.update(keyboard_params)
+      @keyboard.update(keyboard_params)
   
       if @keyboard.save
         redirect_to keyboard_path(@keyboard)
@@ -63,7 +63,7 @@ class KeyboardsController < ApplicationController
     private
   
     def keyboard_params
-      params.require(:keyboard).permit(:make, :model, :inventory, :for_sale, :artist_id, artist_attributes: [:name])
+      params.require(:keyboard).permit(:make, :model, :price, :inventory, :for_sale, :artist_id, artist_attributes: [:name])
     end
   end
   

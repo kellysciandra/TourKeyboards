@@ -1,6 +1,7 @@
 <tr>
   <th scope="row"><%=  link_to keyboard.artist.name, artist_path(keyboard.artist)  %></th>
-  <th scope="row"><%=  link_to keyboard.title, keyboard_path(keyboard)  %></th>
+  <th scope="row"><%=  link_to keyboard.make, keyboard_path(keyboard)  %></th>
+  <th scope="row"><%= keyboard.model %></th>
   <th scope="row">$<%= keyboard.price %></th>
   <th scope="row"><%= keyboard.inventory %></th>
   <th scope="row"><%= keyboard.for_sale_display %></th>
@@ -8,6 +9,7 @@
     <% if current_user.keyboards.include?(keyboard) %>
       <%= link_to "Edit", edit_keyboard_path(keyboard), class: 'btn btn-outline-secondary' %></th>
       <th scope="row"><%= link_to "Delete", keyboard, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-secondary' %>
+      <th scope="row"><%= button_to "Add to Cart", line_items_path(keyboard_id: keyboard), class: 'btn btn-primary' %>
     <% else %>
       <%= button_to "Add to Cart", line_items_path(keyboard_id: keyboard), class: 'btn btn-primary' %>
       <th scope="row"></th>

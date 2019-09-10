@@ -4,10 +4,10 @@
      <nav>
         <ul class="nav navbar-nav navbar-left">
           <li id="logo"><%= link_to "Tour Keyboards", store_path %></li>
-          <li><%= link_to "Store Home", store_path %></li>
+          
 
           <% if user_signed_in? %>
-            <li><%= link_to "My Keyboards", my_keyboards_path %></li>
+            <li><%= link_to "Marketplace", my_keyboards_path %></li>
             <li><%= link_to 'Add New Keyboard', add_new_keyboard %></li>
             <% if current_cart.persisted? %>
               <li><%= link_to "Cart", cart_path(current_cart) %></li>

@@ -5,9 +5,9 @@ class Keyboard < ApplicationRecord
     belongs_to :user, required: false
   
     validates :make, presence: true
-    validates :make, uniqueness: true
+    # validates :make, uniqueness: true
     validates :model, presence: true
-    validates :model, uniqueness: true
+    # validates :model, uniqueness: true
     validates :price, presence: true
     validates :inventory, presence: true
   

@@ -3,7 +3,7 @@
     <% content_for :cart_content do %>
       <tr>
         <th scope="col"><%= link_to @line_item.keyboard.artist.name, artist_path(@line_item.keyboard.artist) %></th>
-        <th scope="col"><%= link_to @line_item.keyboard.title, keyboard_path(@line_item.keyboard) %></th>
+        <th scope="col"><%= link_to @line_item.keyboard.make, keyboard_path(@line_item.keyboard) %></th>
         <th scope="col">$<%= @line_item.keyboard.price %></th>
         <th scope="col"><%= f.text_field :quantity %></th>
         <th scope="col"><%= f.submit "Save", { class: 'btn btn-primary' } %></th>
