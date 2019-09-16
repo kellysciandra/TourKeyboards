@@ -7,8 +7,9 @@ end
 
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'dotenv-rails'
-gem 'thin'
+gem 'figaro'
+gem 'webpacker'
+gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap-sass'
 

@@ -3,7 +3,7 @@
 
      <nav>
         <ul class="nav navbar-nav navbar-left">
-          <li id="logo"><%= link_to "Tour Keyboards", store_path %></li>
+          <li id="logo"><%= "Tour Keyboards" %></li>
           
 
           <% if user_signed_in? %>
@@ -17,7 +17,6 @@
           <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
-            <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
           <% end %>
         </ul>
         <% if user_signed_in? %>
