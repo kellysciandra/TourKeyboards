@@ -8,9 +8,9 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'd97f44d0e2494fbc5dee923a444dac92f27c222040b6e252f7b75431eeccc03a3044bdc8aaa19e6d8826a1bc2a03948c6005804d1eeb08cb67c942f0d8992d88'
+  # config.secret_key = '8b7055c7bf7176ff59115889c3a430e15ffb18472cbf75563fc20bb523b1cf987eb6ff0f8b7bf6d36d65a124f436bbebc7abd3da730a06750c8165ea83b48412'
 
-  config.omniauth :facebook, ENV['627531920987962'], ENV['a18b2bc1f4aa08f2dbefedd6ea2166bb']
+  config.omniauth :facebook, "237999677100166", "e03912081b6e7e39c97001ad6e84a9a0", scope: 'email,public_profile,user_gender'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -20,7 +20,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'devise@facebook.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

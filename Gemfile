@@ -8,6 +8,7 @@ end
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+gem 'thin'
 
 gem 'bootstrap-sass'
 
