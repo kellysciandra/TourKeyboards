@@ -10,6 +10,8 @@ class Keyboard < ApplicationRecord
     # validates :model, uniqueness: true
     validates :price, presence: true
     validates :inventory, presence: true
+
+    scope :for_sale, -> {where(for_sale: true)}
   
     def self.for_sale
       Keyboard.where("for_sale = ? AND inventory > ?", true, 0)
@@ -39,6 +41,10 @@ class Keyboard < ApplicationRecord
       end  
       self.artist = artist
     end
-  
+
+    def for_sale 
+      for_sale?
+    end 
+
   end
   
