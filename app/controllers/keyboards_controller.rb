@@ -1,10 +1,8 @@
 class KeyboardsController < ApplicationController
+
     def index
-      if params[:artist_id]
-        @keyboards = Keyboard.all.where("artist_id = ?", params[:artist_id])
-      else
-        @keyboards = Keyboard.all
-      end
+      @keyboards = current_user.keyboards
+      render :index
     end
   
     def new
@@ -18,7 +16,7 @@ class KeyboardsController < ApplicationController
     end
   
     def create
-      @keyboard = current_user.keyboards.new(keyboard_params)
+      @keyboard = current_user.keyboards.build(keyboard_params)
   
       if @keyboard.save
         redirect_to keyboard_path(@keyboard)
@@ -51,14 +49,10 @@ class KeyboardsController < ApplicationController
     end
   
     def destroy
-      Keyboard.find(params[:id]).destroy
+      current_user.keyboards.find(params[:id]).destroy
       redirect_to my_keyboards_path
     end
-  
-    def my_keyboards
-      @keyboards = Keyboard.my_keyboards(current_user)
-      render :index
-    end
+
   
     private
   

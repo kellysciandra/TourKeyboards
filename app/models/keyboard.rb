@@ -4,6 +4,7 @@ class Keyboard < ApplicationRecord
     has_many :carts, through: :line_items
     belongs_to :user, required: false
   
+  
     validates :make, presence: true
     # validates :make, uniqueness: true
     validates :model, presence: true
@@ -19,10 +20,6 @@ class Keyboard < ApplicationRecord
   
     def self.for_sale_exclude_current_user(user)
       Keyboard.where.not("user_id = ?", user.id) & Keyboard.for_sale
-    end
-  
-    def self.my_keyboards(user)
-      Keyboard.where("user_id = ?", user.id)
     end
   
     def for_sale_display
@@ -41,10 +38,6 @@ class Keyboard < ApplicationRecord
       end  
       self.artist = artist
     end
-
-    def for_sale 
-      for_sale?
-    end 
 
   end
   

@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-
   def show
     @cart = current_cart
   end
@@ -7,5 +6,4 @@ class CartsController < ApplicationController
   def edit
     @cart = Cart.find(params[:id])
   end
-
 end

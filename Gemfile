@@ -10,9 +10,12 @@ gem 'omniauth-facebook'
 gem 'figaro'
 gem 'webpacker'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'pry'
+gem 'rspec-rails', '~> 3.0'
+gem 'bulma'
 
 gem 'bootstrap-sass'
-
+gem 'database_cleaner'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use sqlite3 as the database for Active Record
