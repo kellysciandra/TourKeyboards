@@ -6,6 +6,7 @@
   <th scope="row"><%= keyboard.inventory %></th>
   <th scope="row"><%= keyboard.for_sale_display %></th>
   <th scope="row">
+  
     <% if current_user.keyboards.include?(keyboard) %>
       <%= link_to "Edit", edit_keyboard_path(keyboard), class: 'btn btn-outline-secondary' %></th>
       <th scope="row"><%= link_to "Delete", keyboard, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-secondary' %>

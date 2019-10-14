@@ -12,7 +12,7 @@ class Keyboard < ApplicationRecord
     validates :price, presence: true
     validates :inventory, presence: true
 
-    scope :for_sale, -> {where(for_sale: true)}
+    # scope :for_sale, -> {where(for_sale: true)}
   
     def self.for_sale
       Keyboard.where("for_sale = ? AND inventory > ?", true, 0)
